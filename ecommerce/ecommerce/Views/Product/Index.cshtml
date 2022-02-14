@@ -1,0 +1,25 @@
+﻿@model List<ecommerce.Models.Database.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var b in Model)
+    {
+        <tr>
+            <td>@b.name</td>
+            <td>@b.price</td>
+            <td>@b.quantity</td>
+            <td><a href="/Product/Edit/@b.id">Edit</a>
+                <a href="/Product/Delete/@b.id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
