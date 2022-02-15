@@ -1,0 +1,30 @@
+﻿@model List<ecommerce.Models.Database.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a href="/Product/Showcart">Show Cart</a>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+        <th>Order</th>
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.name</td>
+            <td>@b.price</td>
+            <td>@b.quantity</td>
+            <td>
+                <a href="/Product/Edit/@b.id">Edit</a>
+                <a href="/Product/Delete/@b.id">Delete</a>
+            </td>
+            <td><a href="/Product/Buy/@b.id">Add to cart</a></td>
+        </tr>
+    }
+</table>
+@Session["cart"];

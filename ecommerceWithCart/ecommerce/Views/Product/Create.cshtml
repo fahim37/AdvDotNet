@@ -1,0 +1,15 @@
+﻿@model ecommerce.Models.Database.Product
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action="/Product/Create" method="post">
+    <input type="text" name="name" value="@Model.name" class="form-control" placeholder="Name" />
+    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+    <input type="text" name="price" value="@Model.price" class="form-control" placeholder="price" />
+    @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+    <input type="text" name="quantity" value="@Model.quantity" class="form-control" placeholder="Quantity" />
+    @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
+    <input type="submit" value="Create" />
+</form>
